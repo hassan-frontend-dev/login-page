@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">تسجيل الدخول</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- خط Cairo + مكتبة الأيقونات FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- أزرار التحكم باللغة والوضع -->
+    <div class="top-controls">
+        <button id="themeToggle" class="control-btn" title="تغيير المظهر">
+            <i class="fa-solid fa-sun" id="themeIcon"></i>
+        </button>
+        <button id="langToggle" class="control-btn lang-btn">
+            <i class="fa-solid fa-globe"></i>
+            <span id="langText">English</span>
+        </button>
+    </div>
+
+    <div class="login-wrapper">
+        <div class="login-header">
+            <div class="icon-avatar">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <h2 data-i18n="title">مرحباً بك مجدداً</h2>
+            <p data-i18n="subtitle">سجّل دخولك للوصول إلى حسابك</p>
+        </div>
+
+        <form id="loginForm">
+            <!-- حقل المستخدم -->
+            <div class="input-field">
+                <input type="text" id="username" data-i18n-placeholder="usernamePlaceholder" placeholder="اسم المستخدم أو البريد" required>
+                <i class="fa-regular fa-user field-icon"></i>
+            </div>
+
+            <!-- حقل كلمة السر -->
+            <div class="input-field">
+                <input type="password" id="password" data-i18n-placeholder="passwordPlaceholder" placeholder="كلمة السر" required>
+                <i class="fa-solid fa-lock field-icon"></i>
+            </div>
+
+            <!-- الخيارات -->
+            <div class="options-row">
+                <label class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <span data-i18n="rememberMe">تذكرني</span>
+                </label>
+                <a href="#" class="forgot-link" data-i18n="forgotPassword">نسيت كلمة السر؟</a>
+            </div>
+
+            <!-- زر الدخول -->
+            <button type="submit" class="btn-submit">
+                <span data-i18n="loginBtn">تسجيل الدخول</span>
+                <i class="fa-solid fa-arrow-left arrow-icon"></i>
+            </button>
+        </form>
+
+        <div class="login-footer">
+            <p><span data-i18n="noAccount">ليس لديك حساب؟</span> <a href="#" data-i18n="register">أنشئ حساباً جديداً</a></p>
+        </div>
+    </div>
+
+    <!-- الإشعار Toast -->
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastText" data-i18n="successMsg">تم تسجيل الدخول بنجاح!</span>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
